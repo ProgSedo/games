@@ -1,0 +1,175 @@
+.gameInterface {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.scoreContainer {
+  display: flex;
+  gap: 2rem;
+}
+
+.scoreBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.scoreLabel {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.25rem;
+}
+
+.scoreValue {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.timer {
+  background: #2c3e50;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: monospace;
+}
+
+.clueContainer {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.clue {
+  color: #2c3e50;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.wordContainer {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.letterBoxes {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 100%;
+  --box-size: min(60px, calc(80vw / var(--word-length)));
+}
+
+.letterBox {
+  width: var(--box-size);
+  height: calc(var(--box-size) * 1.1547); /* Height of a regular hexagon */
+  position: relative;
+}
+
+.hexagon {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: white;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.hexagon:hover {
+  transform: translateY(-2px);
+}
+
+.letter {
+  color: #2c3e50;
+  font-size: calc(var(--box-size) * 0.6);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.inputContainer {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.wordInput {
+  padding: 0.75rem 1rem;
+  font-size: 1.1rem;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 400px;
+  text-transform: uppercase;
+}
+
+.wordInput:focus {
+  outline: none;
+  border-color: #4CAF50;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+}
+
+.submitButton {
+  padding: 0.75rem 2rem;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.submitButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
+}
+
+@media (max-width: 768px) {
+  .gameInterface {
+    padding: 1rem;
+  }
+
+  .topBar {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .scoreContainer {
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .timer {
+    width: 100%;
+    text-align: center;
+  }
+
+  .letterBoxes {
+    gap: 0.25rem;
+  }
+} 
