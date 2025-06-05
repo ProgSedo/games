@@ -1,7 +1,11 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './WordGame.module.css';
+import RulesModal from './components/RulesModal';
 
 export default function WordGame() {
+  const [showRules, setShowRules] = useState(false);
+
   return (
     <div className={styles.container}>
       <header className={styles.header}>
@@ -20,12 +24,17 @@ export default function WordGame() {
             <button className={styles.playButton}>
               Start New Game
             </button>
-            <button className={styles.rulesButton}>
+            <button 
+              className={styles.rulesButton}
+              onClick={() => setShowRules(true)}
+            >
               How to Play
             </button>
           </div>
         </div>
       </div>
+
+      {showRules && <RulesModal onClose={() => setShowRules(false)} />}
     </div>
   );
 } 
