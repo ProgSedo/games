@@ -7,6 +7,12 @@ const games = [
     title: 'Word Game',
     description: 'Test your vocabulary and quick thinking in this exciting word game!',
     image: '/game-thumbnails/word-game.png' // We'll add this image later
+  },
+  {
+    id: 'scrambled-words',
+    title: 'Scrambled Words',
+    description: 'Unscramble letters to form words in this challenging word puzzle game!',
+    image: '/game-thumbnails/scrambled-words.png' // We'll add this image later
   }
   // More games can be added here in the future
 ];
