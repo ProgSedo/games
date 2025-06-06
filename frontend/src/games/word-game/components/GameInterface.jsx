@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import styles from './GameInterface.module.css';
 
 export default function GameInterface() {
@@ -9,6 +9,56 @@ export default function GameInterface() {
 
   // Create array of empty letter boxes based on word length
   const letterBoxes = Array(currentWord.length).fill('');
+
+  const [guessedLetters , setGuessedLetters] = useState(Array(currentWord.length).fill(''))
+  const inputRefs = useRef([]);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    setGuessedLetters(Array(currentWord.length).fill(''));
+    inputRefs.current = [];
+  }, [currentWord]);
+
+  const handleChange = (e, index) => {
+    const newLetters = [...guessedLetters];
+    newLetters[index] = e.target.value.toUpperCase();
+    setGuessedLetters(newLetters);
+
+    if(e.target.value && inputRefs.current[index+1]){
+      setActiveIndex(index+1);
+      inputRefs.current[index+1].focus();
+    }
+  }
+
+  const handleKeyDown = (e, index) => {
+    if(e.key === 'Backspace'){
+      const newLetters = [...guessedLetters];
+
+      if(guessedLetters[index]){
+        newLetters[index] = '';
+        setGuessedLetters(newLetters);
+      }
+      else if(index > 0 && guessedLetters[index] === ''){
+        newLetters[index-1] = '';
+        setGuessedLetters(newLetters);
+      }
+      if(index > 0){
+        inputRefs.current[index-1].focus();
+        setActiveIndex(index-1);
+      }
+    }
+
+    if(e.key === 'Enter'){
+      if(index !== currentWord.length-1 || guessedLetters[index] === ''){
+        // Shake the boxes and give an error sound
+      }
+      else{
+        const guess = guessedLetters.join('');
+        console.log("Submitted: ", guess);
+        // TODO
+      }
+    }
+  }
 
   return (
     <div className={styles.gameInterface}>
@@ -52,12 +102,27 @@ export default function GameInterface() {
       </div>
 
       <div className={styles.inputContainer}>
-        <input
-          type="text"
-          className={styles.wordInput}
-          placeholder="Type your answer here..."
-          maxLength={12}
-        />
+        <div style={{ display: 'flex', gap: '8px' }}>
+          {guessedLetters.map((letter, index) => (
+              <input
+                  key={index}
+                  type="text"
+                  maxLength={1}
+                  value={letter}
+                  onMouseDown={(e) => {
+                    if (index !== activeIndex) {
+                      e.preventDefault(); // prevent default focus behavior
+                      inputRefs.current[activeIndex]?.focus(); // force focus to the active box
+                    }
+                  }}
+                  onPaste={(e) => e.preventDefault()}
+                  onChange={(e) => handleChange(e, index)}
+                  onKeyDown={(e) => handleKeyDown(e, index)}
+                  ref={el => inputRefs.current[index] = el}
+                  className={styles.letterInput}
+              />
+          ))}
+        </div>
         <button className={styles.submitButton}>
           Submit
         </button>
