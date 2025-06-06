@@ -2,18 +2,19 @@ import { useState, useEffect, useRef } from 'react';
 import styles from './GameInterface.module.css';
 
 export default function GameInterface() {
-  const [currentWord, setCurrentWord] = useState('EXAMPLE'); // This will be dynamic later
+  const [currentWord, setCurrentWord] = useState('EXAMPLEe'); // This will be dynamic later
   const [timer, setTimer] = useState(120); // 2 minutes per question
   const [totalScore, setTotalScore] = useState(0);
   const [currentQuestionScore, setCurrentQuestionScore] = useState(500);
 
-  // Create array of empty letter boxes based on word length
-  const letterBoxes = Array(currentWord.length).fill('');
+  // Ata's wonderful code
+  //const letterBoxes = Array(currentWord.length).fill('');
 
   const [guessedLetters , setGuessedLetters] = useState(Array(currentWord.length).fill(''))
   const inputRefs = useRef([]);
   const [activeIndex, setActiveIndex] = useState(0);
 
+  // Each time the current word changes, the focus is renewed and array is emptied
   useEffect(() => {
     setGuessedLetters(Array(currentWord.length).fill(''));
     inputRefs.current = [];
@@ -85,48 +86,57 @@ export default function GameInterface() {
           This is where the clue for the current word will be displayed. It will contain the definition or hint for the word the player needs to guess.
         </p>
       </div>
-
-      <div className={styles.wordContainer}>
-        <div 
-          className={styles.letterBoxes}
-          style={{ '--word-length': currentWord.length }}
-        >
-          {letterBoxes.map((_, index) => (
-            <div key={index} className={styles.letterBox}>
-              <div className={styles.hexagon}>
-                <span className={styles.letter}></span>
+      {/* The code that has written by a deity
+        <div className={styles.wordContainer}>
+          <div
+              className={styles.letterBoxes}
+              style={{'--word-length': currentWord.length}}
+          >
+            {letterBoxes.map((_, index) => (
+                <div key={index} className={styles.letterBox}>
+                  <div className={styles.hexagon}>
+                    <span className={styles.letter}></span>
+                  </div>
+                </div>
+            ))}
+          </div>
+        </div>
+*/}
+      <div className={styles.inputContainer}>
+        <div style={{ display: 'flex', gap: '8px' }}>
+          {guessedLetters.map((letter, index) => (
+            <div key={index} className={styles.hexagonWrapper}>
+              <div key={index} className={styles.hexagon}>
+                <input
+                    key={index}
+                    type="text"
+                    maxLength={1}
+                    value={letter}
+                    onMouseDown={(e) => {
+                      if (index !== activeIndex) {
+                        e.preventDefault(); // prevent default focus behavior
+                        inputRefs.current[activeIndex]?.focus(); // force focus to the active box
+                      }
+                    }}
+                    onPaste={(e) => e.preventDefault()}
+                    onChange={(e) => handleChange(e, index)}
+                    onKeyDown={(e) => handleKeyDown(e, index)}
+                    ref={el => inputRefs.current[index] = el}
+                    className={styles.letterInput}
+                />
               </div>
             </div>
           ))}
         </div>
       </div>
-
-      <div className={styles.inputContainer}>
-        <div style={{ display: 'flex', gap: '8px' }}>
-          {guessedLetters.map((letter, index) => (
-              <input
-                  key={index}
-                  type="text"
-                  maxLength={1}
-                  value={letter}
-                  onMouseDown={(e) => {
-                    if (index !== activeIndex) {
-                      e.preventDefault(); // prevent default focus behavior
-                      inputRefs.current[activeIndex]?.focus(); // force focus to the active box
-                    }
-                  }}
-                  onPaste={(e) => e.preventDefault()}
-                  onChange={(e) => handleChange(e, index)}
-                  onKeyDown={(e) => handleKeyDown(e, index)}
-                  ref={el => inputRefs.current[index] = el}
-                  className={styles.letterInput}
-              />
-          ))}
-        </div>
-        <button className={styles.submitButton}>
-          Submit
-        </button>
-      </div>
+      <button className={styles.submitButton}
+              onClick={() => {
+                inputRefs.current[activeIndex].focus();
+                //TODO
+              }}
+      >
+        Submit
+      </button>
     </div>
   );
 } 
