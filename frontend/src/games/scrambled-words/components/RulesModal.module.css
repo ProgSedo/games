@@ -1,0 +1,166 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+.modalContent {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 600px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.closeButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #666;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.closeButton:hover {
+  background-color: #f0f0f0;
+}
+
+.modalContent h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.rulesContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.ruleItem {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background-color: #f8f9fa;
+  transition: all 0.2s ease;
+}
+
+.ruleItem:hover {
+  transform: translateX(8px);
+  background-color: #f1f3f5;
+}
+
+.ruleIcon {
+  font-size: 1.5rem;
+  min-width: 48px;
+  height: 48px;
+  background: white;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ruleText {
+  flex: 1;
+}
+
+.ruleText h3 {
+  color: #2c3e50;
+  margin: 0 0 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.ruleText p {
+  color: #666;
+  margin: 0;
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+.footer {
+  margin-top: 2.5rem;
+  text-align: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid #eee;
+}
+
+.readyText {
+  color: #2c3e50;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.startButton {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 0.75rem 2.5rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.startButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+  background: #43a047;
+}
+
+@media (max-width: 480px) {
+  .modalContent {
+    padding: 1.5rem;
+  }
+
+  .ruleItem {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .ruleIcon {
+    font-size: 1.25rem;
+    min-width: 40px;
+    height: 40px;
+  }
+
+  .ruleText h3 {
+    font-size: 1.1rem;
+  }
+
+  .ruleText p {
+    font-size: 0.95rem;
+  }
+
+  .startButton {
+    width: 100%;
+  }
+} 
