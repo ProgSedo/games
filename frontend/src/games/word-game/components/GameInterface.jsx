@@ -1,9 +1,10 @@
 import { useState, useEffect, useRef } from 'react';
 import styles from './GameInterface.module.css';
+import { useNavigate } from 'react-router-dom';
 
 export default function GameInterface() {
+  const navigate = useNavigate();
   const [currentWord, setCurrentWord] = useState('EXAMPLEe'); // This will be dynamic later
-  const [timer, setTimer] = useState(120); // 2 minutes per question
   const [totalScore, setTotalScore] = useState(0);
   const [currentQuestionScore, setCurrentQuestionScore] = useState(500);
 
@@ -61,6 +62,22 @@ export default function GameInterface() {
     }
   }
 
+  const [timer, setTimer] = useState(5); // 2 minutes per question
+  const [gameOver, setGameOver] = useState(false);
+
+  useEffect(() => {
+    if(timer <= 0){
+      setGameOver(true);
+    }
+    else{
+      const interval = setInterval(() => {
+        setTimer(prev => prev -1);
+      },1000);
+
+      return () => clearInterval(interval)
+    }
+  }, [timer]);
+
   return (
     <div className={styles.gameInterface}>
       <div className={styles.topBar}>
@@ -86,22 +103,6 @@ export default function GameInterface() {
           This is where the clue for the current word will be displayed. It will contain the definition or hint for the word the player needs to guess.
         </p>
       </div>
-      {/* The code that has written by a deity
-        <div className={styles.wordContainer}>
-          <div
-              className={styles.letterBoxes}
-              style={{'--word-length': currentWord.length}}
-          >
-            {letterBoxes.map((_, index) => (
-                <div key={index} className={styles.letterBox}>
-                  <div className={styles.hexagon}>
-                    <span className={styles.letter}></span>
-                  </div>
-                </div>
-            ))}
-          </div>
-        </div>
-*/}
       <div className={styles.inputContainer}>
         <div style={{ display: 'flex', gap: '8px' }}>
           {guessedLetters.map((letter, index) => (
@@ -137,6 +138,26 @@ export default function GameInterface() {
       >
         Submit
       </button>
+
+      {gameOver && <div className={styles.popupOverlay}>
+        <div className={styles.popupBox}>
+          <h2> Game Over! </h2>
+          <p> Game Statistics </p>
+          <div className={styles.popupButtons}>
+            <button
+              onClick={() =>{
+                navigate("/")
+            }}>
+              Return Home
+            </button>
+            <button onClick={()=>{
+              //TODO
+            }}>
+              Play Again
+            </button>
+          </div>
+        </div>
+      </div>}
     </div>
   );
 } 
