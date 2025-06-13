@@ -1,25 +1,100 @@
 import { useState, useEffect, useRef } from 'react';
 import styles from './GameInterface.module.css';
 import { useNavigate } from 'react-router-dom';
+import wordlist from "../../../data_storage/wordnet_dump.json";
+
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function firstIndexByLength(arr, n){
+  let lowIndex = 0, highIndex = arr.length -1;
+  while(highIndex > lowIndex){
+    const mid = Math.floor((lowIndex + highIndex) / 2);
+    const len = arr[mid].word.length;
+    if(len < n)
+      lowIndex = mid+1;
+    else
+      highIndex = mid;
+  }
+  return arr[lowIndex].word.length === n ? lowIndex : -1;
+}
+
+function lastIndexByLength(arr, n){
+  let lowIndex = 0, highIndex = arr.length -1;
+  while(highIndex > lowIndex){
+    const mid = Math.floor((lowIndex + highIndex) / 2);
+    const len = arr[mid+1].word.length;
+    if(len > n)
+      highIndex = mid;
+    else
+      lowIndex = mid+1;
+  }
+  return arr[lowIndex].word.length === n ? lowIndex : -1;
+}
 
 export default function GameInterface() {
   const navigate = useNavigate();
-  const [currentWord, setCurrentWord] = useState('EXAMPLEe'); // This will be dynamic later
-  const [totalScore, setTotalScore] = useState(0);
-  const [currentQuestionScore, setCurrentQuestionScore] = useState(500);
 
-  // Ata's wonderful code
-  //const letterBoxes = Array(currentWord.length).fill('');
+  /**
+   * Selected words for the game
+   */
+  const [wordList, setWordList] = useState(null);
+  const [wordIndex, setWordIndex] = useState(0);
+  const [totalPoint, setTotalPoint] = useState(0);
+  const [currentPoint, setCurrentPoint] = useState(0);
 
-  const [guessedLetters , setGuessedLetters] = useState(Array(currentWord.length).fill(''))
+  useEffect(()=>{
+    const selected = [];
+    for(let i = 4; i <= 12; i++){
+      const firstIndex = firstIndexByLength(wordlist, i);
+      const lastIndex = lastIndexByLength(wordlist, i);
+
+      if (firstIndex === -1 || lastIndex === -1)
+        console.log("First and last index error");
+      if (lastIndex - firstIndex + 1 < 2)
+        console.log("Not enough words");
+
+      const s = new Set();
+      while(s.size < 2){
+        s.add(getRandomInt(firstIndex,lastIndex));
+      }
+      while(s.size > 0){
+        const index = s.values().next().value;
+        selected.push({
+          word: wordlist[index].word,
+          meaning: wordlist[index].definition
+        });
+        s.delete(index);
+      }
+    }
+    setWordList(selected);
+  }, []);
+
+  useEffect(()=>{
+    if(!wordList) return;
+    setTotalPoint(prev => prev + currentPoint);
+    setCurrentPoint(wordList[wordIndex].word.length * 100);
+    setGuessedLetters(wordList[wordIndex].word.split(""));
+    //setGuessedLetters(Array(wordList[wordIndex].word.length).fill(''));
+    inputRefs.current = [];
+  }, [wordIndex, wordList])
+
+  const nextWord = () => {
+    if(wordIndex === wordList.length - 1){
+      setTotalPoint(prev => prev + currentPoint);
+      setGameOver(true);
+    }
+    else
+      setWordIndex(prev => prev + 1);
+  }
+
+  /**
+   * Entering the letters to guess the word
+   */
+  const [guessedLetters , setGuessedLetters] = useState([])
   const inputRefs = useRef([]);
   const [activeIndex, setActiveIndex] = useState(0);
-
-  // Each time the current word changes, the focus is renewed and array is emptied
-  useEffect(() => {
-    setGuessedLetters(Array(currentWord.length).fill(''));
-    inputRefs.current = [];
-  }, [currentWord]);
 
   const handleChange = (e, index) => {
     const newLetters = [...guessedLetters];
@@ -51,7 +126,7 @@ export default function GameInterface() {
     }
 
     if(e.key === 'Enter'){
-      if(index !== currentWord.length-1 || guessedLetters[index] === ''){
+      if(index !== wordList[wordIndex].word.length-1 || guessedLetters[index] === ''){
         // Shake the boxes and give an error sound
       }
       else{
@@ -62,7 +137,10 @@ export default function GameInterface() {
     }
   }
 
-  const [timer, setTimer] = useState(5); // 2 minutes per question
+  /**
+   * Timer for the game
+   */
+  const [timer, setTimer] = useState(120); // 2 minutes per question
   const [gameOver, setGameOver] = useState(false);
 
   useEffect(() => {
@@ -84,11 +162,11 @@ export default function GameInterface() {
         <div className={styles.scoreContainer}>
           <div className={styles.scoreBox}>
             <span className={styles.scoreLabel}>Total Score</span>
-            <span className={styles.scoreValue}>{totalScore}</span>
+            <span className={styles.scoreValue}>{totalPoint}</span>
           </div>
           <div className={styles.scoreBox}>
             <span className={styles.scoreLabel}>Question Value</span>
-            <span className={styles.scoreValue}>{currentQuestionScore}</span>
+            <span className={styles.scoreValue}>{currentPoint}</span>
           </div>
         </div>
         <div className={styles.timer}>
@@ -133,7 +211,7 @@ export default function GameInterface() {
       <button className={styles.submitButton}
               onClick={() => {
                 inputRefs.current[activeIndex].focus();
-                //TODO
+                nextWord();
               }}
       >
         Submit
