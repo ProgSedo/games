@@ -41,6 +41,7 @@ export default function GameInterface() {
    */
   const [wordList, setWordList] = useState(null);
   const [wordIndex, setWordIndex] = useState(0);
+  const [meaningOfWord, setMeaningOfWord] = useState("");
   const [totalPoint, setTotalPoint] = useState(0);
   const [currentPoint, setCurrentPoint] = useState(0);
 
@@ -73,11 +74,17 @@ export default function GameInterface() {
 
   useEffect(()=>{
     if(!wordList) return;
+    inputRefs.current = [];
     setTotalPoint(prev => prev + currentPoint);
     setCurrentPoint(wordList[wordIndex].word.length * 100);
-    setGuessedLetters(wordList[wordIndex].word.split(""));
-    //setGuessedLetters(Array(wordList[wordIndex].word.length).fill(''));
-    inputRefs.current = [];
+    setGuessedLetters(Array(wordList[wordIndex].word.length).fill(''));
+    setMeaningOfWord(wordList[wordIndex].meaning);
+    setActiveIndex(0);
+    setTimeout(() => {
+      inputRefs.current[0]?.focus();
+    }, 0);
+    setWrongAnswer(false);
+    setGivenLetters(Array(wordList[wordIndex].word.length).fill(''));
   }, [wordIndex, wordList])
 
   const nextWord = () => {
@@ -85,14 +92,49 @@ export default function GameInterface() {
       setTotalPoint(prev => prev + currentPoint);
       setGameOver(true);
     }
-    else
+    else{
       setWordIndex(prev => prev + 1);
+    }
+  }
+
+  const [wrongAnswer, setWrongAnswer] = useState(false);
+
+  const wrongAnswerWarning = () => {
+    setWrongAnswer(true);
+    inputRefs.current[activeIndex]?.focus();
+  }
+
+  const evaluateTheAnswer = () => {
+    if(guessedLetters.join('').toUpperCase() === wordList[wordIndex].word.toUpperCase())
+      nextWord();
+    else
+      wrongAnswerWarning();
+  }
+
+  const provideLetter = () => {
+    const ungivenLetterNumber = givenLetters.filter(letter => letter === '').length;
+    if(ungivenLetterNumber === 0) return;
+    let index = getRandomInt(0, ungivenLetterNumber-1);
+    for(let i = 0; i < wordList[wordIndex].word.length; i++){
+      if(givenLetters[i] === ''){
+        if(index === 0){
+          index = i;
+          break;
+        }
+        index--;
+      }
+    }
+    const newGivenLetters = [...givenLetters];
+    newGivenLetters[index] = wordList[wordIndex].word[index].toUpperCase();
+    setGivenLetters(newGivenLetters);
+    setCurrentPoint(prev => prev - 100);
   }
 
   /**
    * Entering the letters to guess the word
    */
-  const [guessedLetters , setGuessedLetters] = useState([])
+  const [guessedLetters , setGuessedLetters] = useState([]);
+  const [givenLetters, setGivenLetters] = useState([]);
   const inputRefs = useRef([]);
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -130,9 +172,7 @@ export default function GameInterface() {
         // Shake the boxes and give an error sound
       }
       else{
-        const guess = guessedLetters.join('');
-        console.log("Submitted: ", guess);
-        // TODO
+        evaluateTheAnswer();
       }
     }
   }
@@ -169,16 +209,26 @@ export default function GameInterface() {
             <span className={styles.scoreValue}>{currentPoint}</span>
           </div>
         </div>
-        <div className={styles.timer}>
-          <span className={styles.timerValue}>
-            {Math.floor(timer / 60)}:{(timer % 60).toString().padStart(2, '0')}
-          </span>
+        <div className={styles.scoreContainer}>
+          <button className={styles.requestLetterButton}
+            onClick={() => {
+              provideLetter();
+              inputRefs.current[activeIndex]?.focus();
+            }}
+          >
+            Request Letter
+          </button>
+          <div className={styles.timer}>
+            <span className={styles.timerValue}>
+              {Math.floor(timer / 60)}:{(timer % 60).toString().padStart(2, '0')}
+            </span>
+          </div>
         </div>
       </div>
 
       <div className={styles.clueContainer}>
         <p className={styles.clue}>
-          This is where the clue for the current word will be displayed. It will contain the definition or hint for the word the player needs to guess.
+          {meaningOfWord}
         </p>
       </div>
       <div className={styles.inputContainer}>
@@ -187,21 +237,22 @@ export default function GameInterface() {
             <div key={index} className={styles.hexagonWrapper}>
               <div key={index} className={styles.hexagon}>
                 <input
-                    key={index}
-                    type="text"
-                    maxLength={1}
-                    value={letter}
-                    onMouseDown={(e) => {
-                      if (index !== activeIndex) {
-                        e.preventDefault(); // prevent default focus behavior
-                        inputRefs.current[activeIndex]?.focus(); // force focus to the active box
-                      }
-                    }}
-                    onPaste={(e) => e.preventDefault()}
-                    onChange={(e) => handleChange(e, index)}
-                    onKeyDown={(e) => handleKeyDown(e, index)}
-                    ref={el => inputRefs.current[index] = el}
-                    className={styles.letterInput}
+                  key={index}
+                  type="text"
+                  maxLength={1}
+                  value={letter}
+                  placeholder={givenLetters[index]}
+                  onMouseDown={(e) => {
+                    if (index !== activeIndex) {
+                      e.preventDefault(); // prevent default focus behavior
+                      inputRefs.current[activeIndex]?.focus(); // force focus to the active box
+                    }
+                  }}
+                  onPaste={(e) => e.preventDefault()}
+                  onChange={(e) => handleChange(e, index)}
+                  onKeyDown={(e) => handleKeyDown(e, index)}
+                  ref={el => inputRefs.current[index] = el}
+                  className={styles.letterInput}
                 />
               </div>
             </div>
@@ -209,13 +260,15 @@ export default function GameInterface() {
         </div>
       </div>
       <button className={styles.submitButton}
-              onClick={() => {
-                inputRefs.current[activeIndex].focus();
-                nextWord();
-              }}
+        onClick={() => {
+          evaluateTheAnswer();
+        }}
       >
         Submit
       </button>
+      {wrongAnswer && <p style={{color: 'black'}}>
+        The current word is {wordList?.[wordIndex]?.word || "Loading..."}
+      </p>}
 
       {gameOver && <div className={styles.popupOverlay}>
         <div className={styles.popupBox}>

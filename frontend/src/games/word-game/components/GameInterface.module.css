@@ -50,6 +50,16 @@
   font-family: monospace;
 }
 
+.requestLetterButton {
+  background: #2c3e50;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: monospace;
+}
+
 .clueContainer {
   background: white;
   padding: 1.5rem;
