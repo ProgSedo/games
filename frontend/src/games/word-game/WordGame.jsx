@@ -1,12 +1,13 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import styles from './WordGame.module.css';
 import RulesModal from './components/RulesModal';
 import GameInterface from './components/GameInterface';
 
 export default function WordGame() {
+  const location = useLocation();
   const [showRules, setShowRules] = useState(false);
-  const [gameStarted, setGameStarted] = useState(false);
+  const [gameStarted, setGameStarted] = useState(location.state?.gameStarted ?? false);
 
   return (
     <div className={styles.container}>

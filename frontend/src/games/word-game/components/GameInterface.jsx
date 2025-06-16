@@ -127,6 +127,7 @@ export default function GameInterface() {
     const newGivenLetters = [...givenLetters];
     newGivenLetters[index] = wordList[wordIndex].word[index].toUpperCase();
     setGivenLetters(newGivenLetters);
+    setTotalLettersGiven(prev => prev + 1);
     setCurrentPoint(prev => prev - 100);
   }
 
@@ -135,6 +136,7 @@ export default function GameInterface() {
    */
   const [guessedLetters , setGuessedLetters] = useState([]);
   const [givenLetters, setGivenLetters] = useState([]);
+  const [totalLettersGiven, setTotalLettersGiven] = useState(0);
   const inputRefs = useRef([]);
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -195,6 +197,8 @@ export default function GameInterface() {
       return () => clearInterval(interval)
     }
   }, [timer]);
+
+  const [currentStatisticsIndex, setCurrentStatisticsIndex] = useState(0);
 
   return (
     <div className={styles.gameInterface}>
@@ -272,8 +276,34 @@ export default function GameInterface() {
 
       {gameOver && <div className={styles.popupOverlay}>
         <div className={styles.popupBox}>
-          <h2> Game Over! </h2>
-          <p> Game Statistics </p>
+          <h2 style={{ fontSize: '2rem' }}>Game Over!</h2>
+          <p style={{ fontSize: '1.25rem' }}>Game Statistics</p>
+          <div className={styles.statItem}>
+            Total Points: {totalPoint}
+          </div>
+          <div className={styles.statItem}>
+            Number of Letters Given: {totalLettersGiven}
+          </div>
+          <label className={styles.wordLabel}>
+            <strong>{wordList[currentStatisticsIndex].word}</strong>: {wordList[currentStatisticsIndex].meaning}
+          </label>
+          <div className={styles.arrowControls}>
+            <button
+                onClick={() =>
+                    setCurrentStatisticsIndex(prev => (prev > 0 ? prev - 1 : wordList.length - 1))
+                }
+            >
+              ⬅️
+            </button>
+
+            <button
+                onClick={() =>
+                    setCurrentStatisticsIndex(prev => (prev < wordList.length - 1 ? prev + 1 : 0))
+                }
+            >
+              ➡️
+            </button>
+          </div>
           <div className={styles.popupButtons}>
             <button
               onClick={() =>{
@@ -282,7 +312,8 @@ export default function GameInterface() {
               Return Home
             </button>
             <button onClick={()=>{
-              //TODO
+              navigate('/temp');
+              setTimeout(() => navigate('/games/word-game', { state: { gameStarted: true } }), 1);
             }}>
               Play Again
             </button>
