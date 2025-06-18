@@ -13,6 +13,12 @@ const games = [
     title: 'Scrambled Words',
     description: 'Unscramble letters to form words in this challenging word puzzle game!',
     image: '/game-thumbnails/scrambled-words.png' // We'll add this image later
+  },
+  {
+    id: 'border-link',
+    title: 'Border Link',
+    description: 'Reach from a country to another by borders!',
+    image: '/game-thumbnails/scrambled-words.png',
   }
   // More games can be added here in the future
 ];
