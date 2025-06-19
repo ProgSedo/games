@@ -1,0 +1,1002 @@
+[
+  {
+    "common": "Togo",
+    "official": "Togolese Republic"
+  },
+  {
+    "common": "Mayotte",
+    "official": "Department of Mayotte"
+  },
+  {
+    "common": "Georgia",
+    "official": "Georgia"
+  },
+  {
+    "common": "Vanuatu",
+    "official": "Republic of Vanuatu"
+  },
+  {
+    "common": "Kyrgyzstan",
+    "official": "Kyrgyz Republic"
+  },
+  {
+    "common": "Niger",
+    "official": "Republic of Niger"
+  },
+  {
+    "common": "China",
+    "official": "People's Republic of China"
+  },
+  {
+    "common": "Tuvalu",
+    "official": "Tuvalu"
+  },
+  {
+    "common": "Comoros",
+    "official": "Union of the Comoros"
+  },
+  {
+    "common": "Bosnia and Herzegovina",
+    "official": "Bosnia and Herzegovina"
+  },
+  {
+    "common": "Bahrain",
+    "official": "Kingdom of Bahrain"
+  },
+  {
+    "common": "Somalia",
+    "official": "Federal Republic of Somalia"
+  },
+  {
+    "common": "Saint Barthélemy",
+    "official": "Collectivity of Saint Barthélemy"
+  },
+  {
+    "common": "Latvia",
+    "official": "Republic of Latvia"
+  },
+  {
+    "common": "Cayman Islands",
+    "official": "Cayman Islands"
+  },
+  {
+    "common": "Netherlands",
+    "official": "Kingdom of the Netherlands"
+  },
+  {
+    "common": "Lesotho",
+    "official": "Kingdom of Lesotho"
+  },
+  {
+    "common": "Venezuela",
+    "official": "Bolivarian Republic of Venezuela"
+  },
+  {
+    "common": "Kenya",
+    "official": "Republic of Kenya"
+  },
+  {
+    "common": "Turkey",
+    "official": "Republic of Turkey"
+  },
+  {
+    "common": "Fiji",
+    "official": "Republic of Fiji"
+  },
+  {
+    "common": "Trinidad and Tobago",
+    "official": "Republic of Trinidad and Tobago"
+  },
+  {
+    "common": "Honduras",
+    "official": "Republic of Honduras"
+  },
+  {
+    "common": "Jersey",
+    "official": "Bailiwick of Jersey"
+  },
+  {
+    "common": "Djibouti",
+    "official": "Republic of Djibouti"
+  },
+  {
+    "common": "Réunion",
+    "official": "Réunion Island"
+  },
+  {
+    "common": "Eswatini",
+    "official": "Kingdom of Eswatini"
+  },
+  {
+    "common": "Tajikistan",
+    "official": "Republic of Tajikistan"
+  },
+  {
+    "common": "Saudi Arabia",
+    "official": "Kingdom of Saudi Arabia"
+  },
+  {
+    "common": "Bermuda",
+    "official": "Bermuda"
+  },
+  {
+    "common": "New Zealand",
+    "official": "New Zealand"
+  },
+  {
+    "common": "Belarus",
+    "official": "Republic of Belarus"
+  },
+  {
+    "common": "Christmas Island",
+    "official": "Territory of Christmas Island"
+  },
+  {
+    "common": "Gambia",
+    "official": "Republic of the Gambia"
+  },
+  {
+    "common": "French Polynesia",
+    "official": "French Polynesia"
+  },
+  {
+    "common": "DR Congo",
+    "official": "Democratic Republic of the Congo"
+  },
+  {
+    "common": "Costa Rica",
+    "official": "Republic of Costa Rica"
+  },
+  {
+    "common": "Malawi",
+    "official": "Republic of Malawi"
+  },
+  {
+    "common": "Republic of the Congo",
+    "official": "Republic of the Congo"
+  },
+  {
+    "common": "Oman",
+    "official": "Sultanate of Oman"
+  },
+  {
+    "common": "Iraq",
+    "official": "Republic of Iraq"
+  },
+  {
+    "common": "Niue",
+    "official": "Niue"
+  },
+  {
+    "common": "Senegal",
+    "official": "Republic of Senegal"
+  },
+  {
+    "common": "Lebanon",
+    "official": "Lebanese Republic"
+  },
+  {
+    "common": "Angola",
+    "official": "Republic of Angola"
+  },
+  {
+    "common": "Iran",
+    "official": "Islamic Republic of Iran"
+  },
+  {
+    "common": "Ecuador",
+    "official": "Republic of Ecuador"
+  },
+  {
+    "common": "Laos",
+    "official": "Lao People's Democratic Republic"
+  },
+  {
+    "common": "Sri Lanka",
+    "official": "Democratic Socialist Republic of Sri Lanka"
+  },
+  {
+    "common": "Aruba",
+    "official": "Aruba"
+  },
+  {
+    "common": "São Tomé and Príncipe",
+    "official": "Democratic Republic of São Tomé and Príncipe"
+  },
+  {
+    "common": "Grenada",
+    "official": "Grenada"
+  },
+  {
+    "common": "Montserrat",
+    "official": "Montserrat"
+  },
+  {
+    "common": "Western Sahara",
+    "official": "Sahrawi Arab Democratic Republic"
+  },
+  {
+    "common": "Guinea",
+    "official": "Republic of Guinea"
+  },
+  {
+    "common": "British Virgin Islands",
+    "official": "Virgin Islands"
+  },
+  {
+    "common": "Panama",
+    "official": "Republic of Panama"
+  },
+  {
+    "common": "Yemen",
+    "official": "Republic of Yemen"
+  },
+  {
+    "common": "Estonia",
+    "official": "Republic of Estonia"
+  },
+  {
+    "common": "Guyana",
+    "official": "Co-operative Republic of Guyana"
+  },
+  {
+    "common": "Luxembourg",
+    "official": "Grand Duchy of Luxembourg"
+  },
+  {
+    "common": "Namibia",
+    "official": "Republic of Namibia"
+  },
+  {
+    "common": "Kosovo",
+    "official": "Republic of Kosovo"
+  },
+  {
+    "common": "New Caledonia",
+    "official": "New Caledonia"
+  },
+  {
+    "common": "Saint Pierre and Miquelon",
+    "official": "Saint Pierre and Miquelon"
+  },
+  {
+    "common": "Libya",
+    "official": "State of Libya"
+  },
+  {
+    "common": "Myanmar",
+    "official": "Republic of the Union of Myanmar"
+  },
+  {
+    "common": "Israel",
+    "official": "State of Israel"
+  },
+  {
+    "common": "Mali",
+    "official": "Republic of Mali"
+  },
+  {
+    "common": "Argentina",
+    "official": "Argentine Republic"
+  },
+  {
+    "common": "French Guiana",
+    "official": "Guiana"
+  },
+  {
+    "common": "Uganda",
+    "official": "Republic of Uganda"
+  },
+  {
+    "common": "Malaysia",
+    "official": "Malaysia"
+  },
+  {
+    "common": "Zambia",
+    "official": "Republic of Zambia"
+  },
+  {
+    "common": "Micronesia",
+    "official": "Federated States of Micronesia"
+  },
+  {
+    "common": "Slovakia",
+    "official": "Slovak Republic"
+  },
+  {
+    "common": "Burundi",
+    "official": "Republic of Burundi"
+  },
+  {
+    "common": "Serbia",
+    "official": "Republic of Serbia"
+  },
+  {
+    "common": "Turkmenistan",
+    "official": "Turkmenistan"
+  },
+  {
+    "common": "South Africa",
+    "official": "Republic of South Africa"
+  },
+  {
+    "common": "Kazakhstan",
+    "official": "Republic of Kazakhstan"
+  },
+  {
+    "common": "Canada",
+    "official": "Canada"
+  },
+  {
+    "common": "Poland",
+    "official": "Republic of Poland"
+  },
+  {
+    "common": "Puerto Rico",
+    "official": "Commonwealth of Puerto Rico"
+  },
+  {
+    "common": "Cocos (Keeling) Islands",
+    "official": "Territory of the Cocos (Keeling) Islands"
+  },
+  {
+    "common": "San Marino",
+    "official": "Republic of San Marino"
+  },
+  {
+    "common": "American Samoa",
+    "official": "American Samoa"
+  },
+  {
+    "common": "Qatar",
+    "official": "State of Qatar"
+  },
+  {
+    "common": "Gibraltar",
+    "official": "Gibraltar"
+  },
+  {
+    "common": "Croatia",
+    "official": "Republic of Croatia"
+  },
+  {
+    "common": "Svalbard and Jan Mayen",
+    "official": "Svalbard og Jan Mayen"
+  },
+  {
+    "common": "Isle of Man",
+    "official": "Isle of Man"
+  },
+  {
+    "common": "Palestine",
+    "official": "State of Palestine"
+  },
+  {
+    "common": "Mauritius",
+    "official": "Republic of Mauritius"
+  },
+  {
+    "common": "Saint Martin",
+    "official": "Saint Martin"
+  },
+  {
+    "common": "Sierra Leone",
+    "official": "Republic of Sierra Leone"
+  },
+  {
+    "common": "Saint Kitts and Nevis",
+    "official": "Federation of Saint Christopher and Nevis"
+  },
+  {
+    "common": "Iceland",
+    "official": "Iceland"
+  },
+  {
+    "common": "Heard Island and McDonald Islands",
+    "official": "Heard Island and McDonald Islands"
+  },
+  {
+    "common": "Kuwait",
+    "official": "State of Kuwait"
+  },
+  {
+    "common": "Taiwan",
+    "official": "Republic of China (Taiwan)"
+  },
+  {
+    "common": "Cameroon",
+    "official": "Republic of Cameroon"
+  },
+  {
+    "common": "El Salvador",
+    "official": "Republic of El Salvador"
+  },
+  {
+    "common": "Macau",
+    "official": "Macao Special Administrative Region of the People's Republic of China"
+  },
+  {
+    "common": "Cuba",
+    "official": "Republic of Cuba"
+  },
+  {
+    "common": "Brazil",
+    "official": "Federative Republic of Brazil"
+  },
+  {
+    "common": "Solomon Islands",
+    "official": "Solomon Islands"
+  },
+  {
+    "common": "Greece",
+    "official": "Hellenic Republic"
+  },
+  {
+    "common": "Norway",
+    "official": "Kingdom of Norway"
+  },
+  {
+    "common": "Jamaica",
+    "official": "Jamaica"
+  },
+  {
+    "common": "Tanzania",
+    "official": "United Republic of Tanzania"
+  },
+  {
+    "common": "Bolivia",
+    "official": "Plurinational State of Bolivia"
+  },
+  {
+    "common": "Cyprus",
+    "official": "Republic of Cyprus"
+  },
+  {
+    "common": "Mongolia",
+    "official": "Mongolia"
+  },
+  {
+    "common": "Monaco",
+    "official": "Principality of Monaco"
+  },
+  {
+    "common": "Tunisia",
+    "official": "Tunisian Republic"
+  },
+  {
+    "common": "French Southern and Antarctic Lands",
+    "official": "Territory of the French Southern and Antarctic Lands"
+  },
+  {
+    "common": "Syria",
+    "official": "Syrian Arab Republic"
+  },
+  {
+    "common": "Chile",
+    "official": "Republic of Chile"
+  },
+  {
+    "common": "Azerbaijan",
+    "official": "Republic of Azerbaijan"
+  },
+  {
+    "common": "France",
+    "official": "French Republic"
+  },
+  {
+    "common": "South Korea",
+    "official": "Republic of Korea"
+  },
+  {
+    "common": "Ghana",
+    "official": "Republic of Ghana"
+  },
+  {
+    "common": "Denmark",
+    "official": "Kingdom of Denmark"
+  },
+  {
+    "common": "Sint Maarten",
+    "official": "Sint Maarten"
+  },
+  {
+    "common": "Andorra",
+    "official": "Principality of Andorra"
+  },
+  {
+    "common": "Curaçao",
+    "official": "Country of Curaçao"
+  },
+  {
+    "common": "Switzerland",
+    "official": "Swiss Confederation"
+  },
+  {
+    "common": "North Macedonia",
+    "official": "Republic of North Macedonia"
+  },
+  {
+    "common": "South Sudan",
+    "official": "Republic of South Sudan"
+  },
+  {
+    "common": "Haiti",
+    "official": "Republic of Haiti"
+  },
+  {
+    "common": "Peru",
+    "official": "Republic of Peru"
+  },
+  {
+    "common": "Guinea-Bissau",
+    "official": "Republic of Guinea-Bissau"
+  },
+  {
+    "common": "Czechia",
+    "official": "Czech Republic"
+  },
+  {
+    "common": "Portugal",
+    "official": "Portuguese Republic"
+  },
+  {
+    "common": "Gabon",
+    "official": "Gabonese Republic"
+  },
+  {
+    "common": "Mexico",
+    "official": "United Mexican States"
+  },
+  {
+    "common": "Italy",
+    "official": "Italian Republic"
+  },
+  {
+    "common": "Finland",
+    "official": "Republic of Finland"
+  },
+  {
+    "common": "Zimbabwe",
+    "official": "Republic of Zimbabwe"
+  },
+  {
+    "common": "Spain",
+    "official": "Kingdom of Spain"
+  },
+  {
+    "common": "Japan",
+    "official": "Japan"
+  },
+  {
+    "common": "Seychelles",
+    "official": "Republic of Seychelles"
+  },
+  {
+    "common": "Albania",
+    "official": "Republic of Albania"
+  },
+  {
+    "common": "Moldova",
+    "official": "Republic of Moldova"
+  },
+  {
+    "common": "Guatemala",
+    "official": "Republic of Guatemala"
+  },
+  {
+    "common": "Germany",
+    "official": "Federal Republic of Germany"
+  },
+  {
+    "common": "Guadeloupe",
+    "official": "Guadeloupe"
+  },
+  {
+    "common": "Bulgaria",
+    "official": "Republic of Bulgaria"
+  },
+  {
+    "common": "Paraguay",
+    "official": "Republic of Paraguay"
+  },
+  {
+    "common": "Eritrea",
+    "official": "State of Eritrea"
+  },
+  {
+    "common": "Sudan",
+    "official": "Republic of the Sudan"
+  },
+  {
+    "common": "Equatorial Guinea",
+    "official": "Republic of Equatorial Guinea"
+  },
+  {
+    "common": "Colombia",
+    "official": "Republic of Colombia"
+  },
+  {
+    "common": "Nigeria",
+    "official": "Federal Republic of Nigeria"
+  },
+  {
+    "common": "Montenegro",
+    "official": "Montenegro"
+  },
+  {
+    "common": "Nepal",
+    "official": "Federal Democratic Republic of Nepal"
+  },
+  {
+    "common": "Brunei",
+    "official": "Nation of Brunei, Abode of Peace"
+  },
+  {
+    "common": "Austria",
+    "official": "Republic of Austria"
+  },
+  {
+    "common": "Turks and Caicos Islands",
+    "official": "Turks and Caicos Islands"
+  },
+  {
+    "common": "Bahamas",
+    "official": "Commonwealth of the Bahamas"
+  },
+  {
+    "common": "United Kingdom",
+    "official": "United Kingdom of Great Britain and Northern Ireland"
+  },
+  {
+    "common": "British Indian Ocean Territory",
+    "official": "British Indian Ocean Territory"
+  },
+  {
+    "common": "Liberia",
+    "official": "Republic of Liberia"
+  },
+  {
+    "common": "Anguilla",
+    "official": "Anguilla"
+  },
+  {
+    "common": "Central African Republic",
+    "official": "Central African Republic"
+  },
+  {
+    "common": "Algeria",
+    "official": "People's Democratic Republic of Algeria"
+  },
+  {
+    "common": "Saint Lucia",
+    "official": "Saint Lucia"
+  },
+  {
+    "common": "Romania",
+    "official": "Romania"
+  },
+  {
+    "common": "United Arab Emirates",
+    "official": "United Arab Emirates"
+  },
+  {
+    "common": "Morocco",
+    "official": "Kingdom of Morocco"
+  },
+  {
+    "common": "Northern Mariana Islands",
+    "official": "Commonwealth of the Northern Mariana Islands"
+  },
+  {
+    "common": "United States Minor Outlying Islands",
+    "official": "United States Minor Outlying Islands"
+  },
+  {
+    "common": "Botswana",
+    "official": "Republic of Botswana"
+  },
+  {
+    "common": "Lithuania",
+    "official": "Republic of Lithuania"
+  },
+  {
+    "common": "Caribbean Netherlands",
+    "official": "Bonaire, Sint Eustatius and Saba"
+  },
+  {
+    "common": "Cape Verde",
+    "official": "Republic of Cabo Verde"
+  },
+  {
+    "common": "United States",
+    "official": "United States of America"
+  },
+  {
+    "common": "Australia",
+    "official": "Commonwealth of Australia"
+  },
+  {
+    "common": "Guam",
+    "official": "Guam"
+  },
+  {
+    "common": "Tonga",
+    "official": "Kingdom of Tonga"
+  },
+  {
+    "common": "Afghanistan",
+    "official": "Islamic Republic of Afghanistan"
+  },
+  {
+    "common": "Falkland Islands",
+    "official": "Falkland Islands"
+  },
+  {
+    "common": "Nauru",
+    "official": "Republic of Nauru"
+  },
+  {
+    "common": "Cook Islands",
+    "official": "Cook Islands"
+  },
+  {
+    "common": "Hungary",
+    "official": "Hungary"
+  },
+  {
+    "common": "Mauritania",
+    "official": "Islamic Republic of Mauritania"
+  },
+  {
+    "common": "Slovenia",
+    "official": "Republic of Slovenia"
+  },
+  {
+    "common": "Chad",
+    "official": "Republic of Chad"
+  },
+  {
+    "common": "Vatican City",
+    "official": "Vatican City State"
+  },
+  {
+    "common": "Benin",
+    "official": "Republic of Benin"
+  },
+  {
+    "common": "Singapore",
+    "official": "Republic of Singapore"
+  },
+  {
+    "common": "Malta",
+    "official": "Republic of Malta"
+  },
+  {
+    "common": "Saint Vincent and the Grenadines",
+    "official": "Saint Vincent and the Grenadines"
+  },
+  {
+    "common": "Marshall Islands",
+    "official": "Republic of the Marshall Islands"
+  },
+  {
+    "common": "Thailand",
+    "official": "Kingdom of Thailand"
+  },
+  {
+    "common": "Liechtenstein",
+    "official": "Principality of Liechtenstein"
+  },
+  {
+    "common": "Ireland",
+    "official": "Republic of Ireland"
+  },
+  {
+    "common": "Maldives",
+    "official": "Republic of the Maldives"
+  },
+  {
+    "common": "Vietnam",
+    "official": "Socialist Republic of Vietnam"
+  },
+  {
+    "common": "Armenia",
+    "official": "Republic of Armenia"
+  },
+  {
+    "common": "Pakistan",
+    "official": "Islamic Republic of Pakistan"
+  },
+  {
+    "common": "Ivory Coast",
+    "official": "Republic of Côte d'Ivoire"
+  },
+  {
+    "common": "Russia",
+    "official": "Russian Federation"
+  },
+  {
+    "common": "Martinique",
+    "official": "Martinique"
+  },
+  {
+    "common": "Bouvet Island",
+    "official": "Bouvet Island"
+  },
+  {
+    "common": "Timor-Leste",
+    "official": "Democratic Republic of Timor-Leste"
+  },
+  {
+    "common": "Nicaragua",
+    "official": "Republic of Nicaragua"
+  },
+  {
+    "common": "Papua New Guinea",
+    "official": "Independent State of Papua New Guinea"
+  },
+  {
+    "common": "Egypt",
+    "official": "Arab Republic of Egypt"
+  },
+  {
+    "common": "Jordan",
+    "official": "Hashemite Kingdom of Jordan"
+  },
+  {
+    "common": "Uruguay",
+    "official": "Oriental Republic of Uruguay"
+  },
+  {
+    "common": "Burkina Faso",
+    "official": "Burkina Faso"
+  },
+  {
+    "common": "Cambodia",
+    "official": "Kingdom of Cambodia"
+  },
+  {
+    "common": "Ethiopia",
+    "official": "Federal Democratic Republic of Ethiopia"
+  },
+  {
+    "common": "Kiribati",
+    "official": "Independent and Sovereign Republic of Kiribati"
+  },
+  {
+    "common": "Bhutan",
+    "official": "Kingdom of Bhutan"
+  },
+  {
+    "common": "Dominican Republic",
+    "official": "Dominican Republic"
+  },
+  {
+    "common": "Suriname",
+    "official": "Republic of Suriname"
+  },
+  {
+    "common": "Bangladesh",
+    "official": "People's Republic of Bangladesh"
+  },
+  {
+    "common": "Barbados",
+    "official": "Barbados"
+  },
+  {
+    "common": "North Korea",
+    "official": "Democratic People's Republic of Korea"
+  },
+  {
+    "common": "Greenland",
+    "official": "Greenland"
+  },
+  {
+    "common": "Belgium",
+    "official": "Kingdom of Belgium"
+  },
+  {
+    "common": "Palau",
+    "official": "Republic of Palau"
+  },
+  {
+    "common": "Norfolk Island",
+    "official": "Territory of Norfolk Island"
+  },
+  {
+    "common": "South Georgia",
+    "official": "South Georgia and the South Sandwich Islands"
+  },
+  {
+    "common": "Philippines",
+    "official": "Republic of the Philippines"
+  },
+  {
+    "common": "India",
+    "official": "Republic of India"
+  },
+  {
+    "common": "Indonesia",
+    "official": "Republic of Indonesia"
+  },
+  {
+    "common": "United States Virgin Islands",
+    "official": "Virgin Islands of the United States"
+  },
+  {
+    "common": "Dominica",
+    "official": "Commonwealth of Dominica"
+  },
+  {
+    "common": "Rwanda",
+    "official": "Republic of Rwanda"
+  },
+  {
+    "common": "Madagascar",
+    "official": "Republic of Madagascar"
+  },
+  {
+    "common": "Hong Kong",
+    "official": "Hong Kong Special Administrative Region of the People's Republic of China"
+  },
+  {
+    "common": "Samoa",
+    "official": "Independent State of Samoa"
+  },
+  {
+    "common": "Faroe Islands",
+    "official": "Faroe Islands"
+  },
+  {
+    "common": "Pitcairn Islands",
+    "official": "Pitcairn Group of Islands"
+  },
+  {
+    "common": "Antigua and Barbuda",
+    "official": "Antigua and Barbuda"
+  },
+  {
+    "common": "Åland Islands",
+    "official": "Åland Islands"
+  },
+  {
+    "common": "Sweden",
+    "official": "Kingdom of Sweden"
+  },
+  {
+    "common": "Mozambique",
+    "official": "Republic of Mozambique"
+  },
+  {
+    "common": "Uzbekistan",
+    "official": "Republic of Uzbekistan"
+  },
+  {
+    "common": "Antarctica",
+    "official": "Antarctica"
+  },
+  {
+    "common": "Wallis and Futuna",
+    "official": "Territory of the Wallis and Futuna Islands"
+  },
+  {
+    "common": "Ukraine",
+    "official": "Ukraine"
+  },
+  {
+    "common": "Belize",
+    "official": "Belize"
+  },
+  {
+    "common": "Saint Helena, Ascension and Tristan da Cunha",
+    "official": "Saint Helena, Ascension and Tristan da Cunha"
+  },
+  {
+    "common": "Guernsey",
+    "official": "Bailiwick of Guernsey"
+  },
+  {
+    "common": "Tokelau",
+    "official": "Tokelau"
+  }
+]
