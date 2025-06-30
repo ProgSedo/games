@@ -253,7 +253,7 @@ export default function GameInterface() {
                     }
                   }}
                   onPaste={(e) => e.preventDefault()}
-                  onChange={(e) => handleChange(e, index)}
+                      onChange={(e) => handleChange(e, index)}
                   onKeyDown={(e) => handleKeyDown(e, index)}
                   ref={el => inputRefs.current[index] = el}
                   className={styles.letterInput}

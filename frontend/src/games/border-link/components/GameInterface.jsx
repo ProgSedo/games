@@ -46,7 +46,6 @@ function similarity(s1, s2){
 export default function GameInterface() {
   const navigate = useNavigate();
 
-  const [suggestion, setSuggestion] = useState("");
   /*
   const handleKeyDown (e) => {
     if(e.key === 'Enter'){
@@ -57,7 +56,9 @@ export default function GameInterface() {
 
   return (
     <div className={styles.gameInterface}>
-
+      <div className={styles.selectedCountriesPanel}>
+        Hello
+      </div>
     </div>
   );
 }

@@ -15,6 +15,7 @@ export default function BorderLink() {
                 <Link to="/" className={styles.backButton}>
                     ← Back to Games
                 </Link>
+                <h1>Border Link</h1>
             </header>
 
             {!gameStarted ? (
