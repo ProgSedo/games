@@ -1,0 +1,383 @@
+.gameInterface {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.gameHeader {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 30px;
+  color: white;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.gameStats {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.statLabel {
+  font-size: 14px;
+  opacity: 0.9;
+  margin-bottom: 5px;
+}
+
+.statValue {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.gameContent {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.scrambledWord {
+  text-align: center;
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.scrambledWord h2 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.letters {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.letter {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+  color: white;
+  border-radius: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(238, 90, 36, 0.3);
+  transition: transform 0.2s ease;
+}
+
+.letter:hover {
+  transform: translateY(-2px);
+}
+
+.inputForm {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.wordInput {
+  flex: 1;
+  max-width: 300px;
+  padding: 15px 20px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 18px;
+  text-align: center;
+  transition: border-color 0.3s ease;
+}
+
+.wordInput:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.submitButton {
+  padding: 15px 30px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.submitButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
+}
+
+.hintButton {
+  align-self: center;
+  padding: 12px 25px;
+  background: linear-gradient(135deg, #ffa726, #ff7043);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.hintButton:hover {
+  transform: translateY(-2px);
+}
+
+.message {
+  text-align: center;
+  padding: 15px;
+  background: linear-gradient(135deg, #4caf50, #45a049);
+  color: white;
+  border-radius: 10px;
+  font-weight: bold;
+  animation: fadeIn 0.3s ease;
+}
+
+.hint {
+  text-align: center;
+  padding: 15px;
+  background: linear-gradient(135deg, #ff9800, #f57c00);
+  color: white;
+  border-radius: 10px;
+  font-weight: bold;
+  animation: fadeIn 0.3s ease;
+}
+
+.foundWordsSection {
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.foundWordsSection h3 {
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.foundWordsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.foundWordItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  background: linear-gradient(135deg, #e8f5e8, #c8e6c9);
+  border-radius: 8px;
+  border-left: 4px solid #4caf50;
+}
+
+.wordText {
+  font-weight: bold;
+  color: #2e7d32;
+}
+
+.wordPoints {
+  font-size: 12px;
+  color: #388e3c;
+  font-weight: bold;
+}
+
+.gameOver {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.gameOver h2 {
+  color: #333;
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+.finalStats {
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.finalStats p {
+  font-size: 18px;
+  margin: 10px 0;
+  color: #333;
+}
+
+.score {
+  font-size: 24px;
+  font-weight: bold;
+  color: #4caf50;
+}
+
+.wordsFound {
+  font-weight: bold;
+  color: #2196f3;
+}
+
+.hintsUsed {
+  font-weight: bold;
+  color: #ff9800;
+}
+
+.foundWordsList,
+.missedWordsList {
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.foundWordsList h3 {
+  color: #4caf50;
+  margin-bottom: 20px;
+}
+
+.missedWordsList h3 {
+  color: #f44336;
+  margin-bottom: 20px;
+}
+
+.wordsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 10px;
+}
+
+.foundWord {
+  padding: 8px 12px;
+  background: linear-gradient(135deg, #e8f5e8, #c8e6c9);
+  border-radius: 8px;
+  color: #2e7d32;
+  font-weight: bold;
+  text-align: center;
+  font-size: 14px;
+}
+
+.missedWord {
+  padding: 8px 12px;
+  background: linear-gradient(135deg, #ffebee, #ffcdd2);
+  border-radius: 8px;
+  color: #c62828;
+  font-weight: bold;
+  text-align: center;
+  font-size: 14px;
+}
+
+.gameOverButtons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.playAgainButton,
+.backButton {
+  padding: 15px 30px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.playAgainButton {
+  background: linear-gradient(135deg, #4caf50, #45a049);
+  color: white;
+}
+
+.backButton {
+  background: linear-gradient(135deg, #757575, #616161);
+  color: white;
+}
+
+.playAgainButton:hover,
+.backButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .gameInterface {
+    padding: 15px;
+  }
+  
+  .gameStats {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .letters {
+    gap: 5px;
+  }
+  
+  .letter {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 20px;
+  }
+  
+  .inputForm {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .wordInput {
+    max-width: 100%;
+  }
+  
+  .foundWordsGrid,
+  .wordsGrid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+  
+  .gameOverButtons {
+    flex-direction: column;
+    align-items: center;
+  }
+}

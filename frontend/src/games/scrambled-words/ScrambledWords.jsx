@@ -1,16 +1,18 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './ScrambledWords.module.css';
+import GameInterface from './components/GameInterface';
+import RulesModal from './components/RulesModal';
 
 const ScrambledWords = () => {
   const [showRules, setShowRules] = useState(false);
   const [gameStarted, setGameStarted] = useState(false);
+  const [showSettings, setShowSettings] = useState(false);
   const [gameSettings, setGameSettings] = useState({
     wordLength: 5,
     timed: true,
     timeLimit: 60,
     useHints: true,
-    minWordLength: 3,
   });
 
   return (
@@ -31,7 +33,7 @@ const ScrambledWords = () => {
             <div className={styles.buttonGroup}>
               <button 
                 className={styles.playButton}
-                onClick={() => setGameStarted(true)}
+                onClick={() => setShowSettings(true)}
               >
                 Start New Game
               </button>
@@ -44,9 +46,21 @@ const ScrambledWords = () => {
             </div>
           </div>
         </div>
-      ) : (
-        <div className={styles.content}>
-          <div className={styles.gameMenu}>
+      ) : gameStarted ? (
+        <GameInterface 
+          settings={gameSettings} 
+          onGameEnd={() => {
+            setGameStarted(false);
+            setShowSettings(false);
+          }} 
+        />
+      ) : null}
+
+      {showRules && <RulesModal onClose={() => setShowRules(false)} />}
+      
+      {showSettings && (
+        <div className={styles.modalOverlay} onClick={() => setShowSettings(false)}>
+          <div className={styles.modal} onClick={e => e.stopPropagation()}>
             <h2>Game Settings</h2>
             <div className={styles.settingsForm}>
               <div className={styles.settingGroup}>
@@ -59,6 +73,7 @@ const ScrambledWords = () => {
                   <option value={5}>5 Letters</option>
                   <option value={6}>6 Letters</option>
                   <option value={7}>7 Letters</option>
+                  <option value={8}>8 Letters</option>
                 </select>
               </div>
 
@@ -84,6 +99,7 @@ const ScrambledWords = () => {
                     <option value={60}>60</option>
                     <option value={90}>90</option>
                     <option value={120}>120</option>
+                    <option value={180}>180</option>
                   </select>
                 </div>
               )}
@@ -99,29 +115,24 @@ const ScrambledWords = () => {
                 </label>
               </div>
 
-              <button className={styles.playButton} onClick={() => console.log('Start game with settings:', gameSettings)}>
-                Start Game
-              </button>
+              <div className={styles.buttonGroup}>
+                <button 
+                  className={styles.playButton} 
+                  onClick={() => {
+                    setShowSettings(false);
+                    setGameStarted(true);
+                  }}
+                >
+                  Start Game
+                </button>
+                <button 
+                  className={styles.cancelButton} 
+                  onClick={() => setShowSettings(false)}
+                >
+                  Cancel
+                </button>
+              </div>
             </div>
-          </div>
-        </div>
-      )}
-
-      {showRules && (
-        <div className={styles.modalOverlay} onClick={() => setShowRules(false)}>
-          <div className={styles.modal} onClick={e => e.stopPropagation()}>
-            <h2>How to Play</h2>
-            <ul>
-              <li>Choose your game settings (word length, time limit, hints)</li>
-              <li>You'll be presented with a scrambled word</li>
-              <li>Type possible words using the given letters</li>
-              <li>Submit your answers to score points</li>
-              <li>Use hints if enabled (may cost points)</li>
-              <li>Try to make as many valid words as possible!</li>
-            </ul>
-            <button className={styles.closeButton} onClick={() => setShowRules(false)}>
-              Close
-            </button>
           </div>
         </div>
       )}
@@ -129,4 +140,4 @@ const ScrambledWords = () => {
   );
 };
 
-export default ScrambledWords; 
+export default ScrambledWords;
